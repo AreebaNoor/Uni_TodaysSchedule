@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Todays Schedule</title>
+
+    <style>
+        @font-face {
+            font-family: Gyahegi;
+            src: url(./Media/Gyahegi.otf);
+        }
+        .mainFlex {
+            display: flex; 
+            flex-direction: column;
+            background-color: #cee0d4;
+            border-radius: 5px;
+            padding: 15px;
+            width: fit-content;
+        }
+        #header {
+            font-size: large;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+            margin: 18px 0px 0px 0px;
+        }
+        .contentDiv {
+            margin: 10px;
+        }
+        .contentDiv table tr td {
+            padding: 2px 15px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .firstColumn {
+            border-right: 2px dashed;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mainFlex">
+        <p id="header">Todays Schedule</p>
+        <div class="contentDiv">
+            <table>
+                <tr>
+                    <td>Time 1</td>
+                    <td>Monday</td>
+                </tr>
+                <tr>
+                    <td>Time 2</td>
+                    <td>[----Subject----]</td>
+                </tr>
+                <tr>
+                    <td>Time 3</td>
+                    <td>[----Subject----]</td>
+                </tr>
+            </table>
+        </div>
+        <div class="contentDiv">
+            <table>
+                <tr>
+                    <td>Time 1</td>
+                    <td>Tuesday</td>
+                </tr>
+                <tr>
+                    <td>Time 2</td>
+                    <td>[----Subject----]</td>
+                </tr>
+                <tr>
+                    <td>Time 3</td>
+                    <td>[----Subject----]</td>
+                </tr>
+            </table>
+        </div>
+        <div class="contentDiv">
+            <table>
+                <tr>
+                    <td>Time 1</td>
+                    <td>Wednesday</td>
+                </tr>
+                <tr>
+                    <td>Time 2</td>
+                    <td>[----Subject----]</td>
+                </tr>
+                <tr>
+                    <td>Time 3</td>
+                    <td>[----Subject----]</td>
+                </tr>
+            </table>
+        </div>
+        <div class="contentDiv">
+            <table>
+                <tr>
+                    <td>Time 1</td>
+                    <td>[----Subject----]</td>
+                </tr>
+                <tr>
+                    <td>Time 2</td>
+                    <td>[----Subject----]</td>
+                </tr>
+                <tr>
+                    <td>Time 3</td>
+                    <td>[----Subject----]</td>
+                </tr>
+            </table>
+        </div>
+        <div class="contentDiv">
+            <table>
+                <tr>
+                    <td>Time 1</td>
+                    <td>Friday</td>
+                </tr>
+                <tr>
+                    <td>Time 2</td>
+                    <td>[----Subject----]</td>
+                </tr>
+                <tr>
+                    <td>Time 3</td>
+                    <td>[----Subject----]</td>
+                </tr>
+            </table>
+        </div>
+        <div class="contentDiv">
+            <table>
+                <tr>
+                    <td>Time 1</td>
+                    <td>Saturday</td>
+                </tr>
+                <tr>
+                    <td>Time 2</td>
+                    <td>[----Subject----]</td>
+                </tr>
+                <tr>
+                    <td>Time 3</td>
+                    <td>[----Subject----]</td>
+                </tr>
+            </table>
+        </div>
+        <div class="contentDiv">
+            <table>
+                <tr>
+                    <td class="firstColumn">Time 1</td>
+                    <td>Sunday</td>
+                </tr>
+                <tr>
+                    <td class="firstColumn">Time 2</td>
+                    <td>[----Subject----]</td>
+                </tr>
+                <tr>
+                    <td class="firstColumn">Time 3</td>
+                    <td>[----Subject----]</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        let weekday = new Date().toLocaleString('en-us', {  weekday: 'long' });
+        let weedaynameReference = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+        let contentDivlist = document.getElementsByClassName("contentDiv");
+        for (let i=0; i<contentDivlist.length; i++) {
+            contentDivlist[i].style.display = "none";
+        }
+
+        for (let j=0; j<weedaynameReference.length; j++) {
+            if (weedaynameReference[j] == weekday) {
+                contentDivlist[j].style.display = "block";
+            }
+        }
+
+
+       
+        let ContentEl = document.getElementById("mainContent");
+
+
+    </script>
+    
+</body>
+</html>
